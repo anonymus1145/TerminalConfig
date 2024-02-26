@@ -1,9 +1,9 @@
 
-#WezTerm Configuration
+WezTerm Configuration
 
 This is my customized WezTerm configuration to enhance my terminal experience. Below are the details of the configuration options and features:
 
-##Installation:
+Installation:
 
 1. Install WezTerm if you haven't already. You can find installation instructions at WezTerm GitHub.
 
