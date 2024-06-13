@@ -29,11 +29,11 @@ config.use_fancy_tab_bar                          = false
 
 config.inactive_pane_hsb                          = {
   saturation = 0.8,
-  brightness = 0.6
+  brightness = 0.7
 }
 
 -- Download the font from https://www.jetbrains.com/lp/mono/
-config.font                                       = wezterm.font("JetBrains Mono", {weight="DemiBold", stretch="Normal", style="Normal"})
+config.font                                       = wezterm.font("JetBrains Mono", {weight="Bold", stretch="Normal", style="Normal"})
 config.font_size                                  = 12
 config.line_height                                = 1.2
 
@@ -44,16 +44,16 @@ config.scrollback_lines                           = 5000
 config.adjust_window_size_when_changing_font_size = false
 config.hide_tab_bar_if_only_one_tab               = true
 
-config.color_scheme                               = "Gruvbox Dark Hard"
+config.color_scheme                               = 'Glacier'
 
-config.window_frame = {
+config.window_frame                               = {
   -- The font used in the tab bar.
   -- Roboto Bold is the default; this font is bundled
   -- with wezterm.
   -- Whatever font is selected here, it will have the
   -- main font setting appended to it to pick up any
   -- fallback fonts you may have used there.
-  font = wezterm.font { family = 'Roboto', weight = 'Bold' },
+  font = wezterm.font { family = 'Noto Sans', weight = 'Regular' },
 
   -- The size of the font in the tab bar.
   -- Default to 10.0 on Windows but 12.0 on other systems
@@ -66,9 +66,10 @@ config.window_frame = {
   -- The overall background color of the tab bar when
   -- the window is not focused
   inactive_titlebar_bg = '#333333',
+
 }
 
-config.colors = {
+config.colors                                     = {
   tab_bar = {
     -- The color of the inactive tab bar edge/divider
     inactive_tab_edge = '#575757',
@@ -177,7 +178,7 @@ config.colors                                     = {
   },
 }
 
-config.window_background_opacity = 1.0
+config.window_background_opacity                  = 1.0
 
 -- Key mappings
 config.keys                                       = {
@@ -197,10 +198,10 @@ config.keys                                       = {
   -- { key = 't', mods = 'CMD', action = act.SpawnTab 'CurrentPaneDomain' },
   -- { key = 'Enter', mods = 'CMD', action = act.ActivateCopyMode },
   { key = 'R', mods = 'CTRL', action = act.ReloadConfiguration },
-  { key = '+', mods = 'CTRL',       action = act.IncreaseFontSize },
-  { key = '-', mods = 'CTRL',       action = act.DecreaseFontSize },
-  { key = '0', mods = 'CTRL',       action = act.ResetFontSize },
-  { key = 'c', mods = 'CMD', action = act.CopyTo 'Clipboard' },
+  { key = '+', mods = 'CTRL', action = act.IncreaseFontSize },
+  { key = '-', mods = 'CTRL', action = act.DecreaseFontSize },
+  { key = '0', mods = 'CTRL', action = act.ResetFontSize },
+  { key = 'c', mods = 'CMD',  action = act.CopyTo 'Clipboard' },
   {
     key = 'U',
     mods = 'CTRL',
@@ -209,7 +210,7 @@ config.keys                                       = {
   },
   { key = '`',     mods = 'CTRL',        action = act.ActivatePaneDirection 'Next' },
   { key = 'p',     mods = 'CMD',         action = act.PasteFrom 'Clipboard' },
-  { key = 'i',     mods = 'CMD',   action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
+  { key = 'i',     mods = 'CMD',         action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
   { key = 'o',     mods = 'CMD',         action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
   { key = 'w',     mods = 'CMD',         action = act.CloseCurrentTab { confirm = true } },
   { key = 'x',     mods = 'CMD',         action = act.CloseCurrentPane { confirm = true } },
